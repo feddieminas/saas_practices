@@ -1,0 +1,194 @@
+/*
+// third video
+
+
+SCSS
+
+$class-name: item;
+
+@for $i from 1 through 4 {
+    .#{$class-name}-#{$i} {
+        width: 60px + $i;
+    }
+}
+
+@mixin button ($color, $size) {
+    width: $size;
+    height: $size/2;
+    border: 1px solid $color;
+    
+    @if $color == #e84610 { // last color was #e84610 so it will result to true 
+        color: #fff;
+    } @else {
+        color: $color;
+    }
+}
+
+@mixin unicornify() {
+    background-color: pink;
+    color: white;
+    @content; // accept content block to include like we do below with border, border radius and text-align
+    font-size: 30px;
+    font-weight: bold;
+}
+
+p {
+    @include unicornify {
+        border: 1px solid pink;
+        border-radius: 100%;
+        text-align:center;
+    }
+}
+
+.btn {
+    @include button (#e84610, 200px)
+}
+
+h1 {
+    @if 1+1 == 2 {
+        border: 1px solid black;
+    }
+}
+
+
+/*
+$random: 5;
+
+h1 {
+    @if $random > 5 {
+        color:blue;
+    } @else if $random == 3 {
+        color:purple;
+    } @else {
+        color:orange;
+    }
+}
+*/
+
+
+CSS
+
+.item-1 {
+  width: 61px; }
+
+.item-2 {
+  width: 62px; }
+
+.item-3 {
+  width: 63px; }
+
+.item-4 {
+  width: 64px; }
+
+p {
+  background-color: pink;
+  color: white;
+  border: 1px solid pink;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold; }
+
+
+.btn {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #e84610;
+  color: #fff; }
+
+h1 {
+  border: 1px solid black; }
+
+/*
+$random: 5;
+
+h1 {
+    @if $random > 5 {
+        color:blue;
+    } @else if $random == 3 {
+        color:purple;
+    } @else {
+        color:orange;
+    }
+}
+*/
+
+/*************/
+
+
+/*
+// second video b
+
+
+SCSS
+
+$blue: #0997d3;
+$red: #e84610;
+$green: #bada55;
+$black: #000000;
+$white: #ffffff;
+
+$width: 300px;
+$height: 500px;
+
+$colors: (
+    black: #000000,
+    red: #e84610,
+    green: #bada55,
+);
+
+@each $key, $value in $colors {
+    .item-#{$key} {
+        background-color: $value;
+    }
+}
+
+// $colorsList: $blue, $red, $green, $black, $white; 
+
+body {
+    background-color: $black;
+}
+
+div {
+    border:1px solid black;
+}
+
+h1 {
+    color:$white;
+}
+
+$class: container;
+
+div.#{$class} {
+    background-color: orange;
+}
+
+
+CSS
+
+.item-black {
+  background-color: #000000; }
+
+.item-red {
+  background-color: #e84610; }
+
+.item-green {
+  background-color: #bada55; }
+
+/* $colorsList: $blue, $red, $green, $black, $white; */
+
+body {
+  background-color: #000000; }
+
+div {
+  border: 1px solid black; }
+
+
+h1 {
+  color: #ffffff; }
+
+div.container {
+  background-color: orange; }
+
+
+*/
